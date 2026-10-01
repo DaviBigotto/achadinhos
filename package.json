@@ -1,0 +1,13 @@
+{
+  "name": "achadinhos",
+  "version": "1.0.0",
+  "description": "Achadinhos da So - As Melhores Ofertas de Beleza & Autocuidado",
+  "main": "server.js",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

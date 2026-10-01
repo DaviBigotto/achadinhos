@@ -416,7 +416,7 @@ function initSocialProofPopups() {
   const triggerSocialToast = () => {
     const nome = nomes[Math.floor(Math.random() * nomes.length)];
     const cidade = cidades[Math.floor(Math.random() * cidades.length)];
-    showToast(`✨ <strong>${nome}</strong> (${cidade}) acabou de entrar no Grupo VIP!`);
+    showToast(`✨ <strong>${nome}</strong> acabou de entrar no Clube da Sô!`);
   };
 
   // Primeira notificação após 8 segundos

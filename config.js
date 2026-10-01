@@ -8,7 +8,7 @@
 window.CONFIG = {
   // LINKS PRINCIPAIS (Altere para seus links reais)
   LINKS: {
-    VIP_GROUP_URL: "https://chat.whatsapp.com/seu-grupo-vip-achadinhos-so",
+    VIP_GROUP_URL: "https://chat.whatsapp.com/LufW5sWwr4W9VDkiSXSfyu",
     SHOPEE_URL: "https://shopee.com.br/achadinhos-da-so",
     MERCADO_LIVRE_URL: "https://mercadolivre.com.br/achadinhos-da-so",
     INSTAGRAM_URL: "https://instagram.com/achadinhosdaso",

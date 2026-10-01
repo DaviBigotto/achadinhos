@@ -274,6 +274,8 @@ body {
   margin-top: 16px;
   box-shadow: 0 4px 18px rgba(232, 90, 135, 0.12);
   overflow: hidden;
+  text-decoration: none;
+  cursor: pointer;
   transition: transform var(--trans-fast), box-shadow var(--trans-fast);
 }
 

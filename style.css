@@ -470,62 +470,104 @@ body {
   font-weight: 700;
 }
 
-/* Botão de Destaque Focal (Pílula com Alto Contraste) */
+/* Botão de Destaque Focal (Pílula com Alto Contraste & Efeito Magnético) */
 .btn-clube-vip {
   width: 100%;
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-between;
   gap: 10px;
-  background: linear-gradient(135deg, var(--color-cta-primary) 0%, var(--color-cta-hover) 100%);
+  background: linear-gradient(135deg, #FF689B 0%, #EE467D 48%, #D43068 100%);
   color: #FFFFFF;
   text-decoration: none;
-  font-size: 0.96rem;
-  font-weight: 700;
+  font-size: 0.98rem;
+  font-weight: 800;
   letter-spacing: 0.035em;
-  padding: 17px 24px;
+  padding: 16px 20px 16px 22px;
   border-radius: var(--radius-full);
-  border: 1px solid rgba(255, 255, 255, 0.22);
-  box-shadow: var(--shadow-cta);
-  transition: all var(--trans-normal);
+  border: 1.5px solid rgba(255, 255, 255, 0.45);
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.55), inset 0 -2px 3px rgba(140, 20, 60, 0.22), 0 14px 34px -4px rgba(238, 70, 125, 0.46), 0 4px 12px rgba(0, 0, 0, 0.08);
   cursor: pointer;
   position: relative;
   overflow: hidden;
+  animation: cta-glow-pulse 2.8s infinite ease-in-out;
+  transition: transform var(--trans-fast), box-shadow var(--trans-fast), background var(--trans-fast);
+}
+
+@keyframes cta-glow-pulse {
+  0%, 100% {
+    transform: scale(1);
+    box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.55), inset 0 -2px 3px rgba(140, 20, 60, 0.22), 0 14px 34px -4px rgba(238, 70, 125, 0.42), 0 0 0 0 rgba(238, 70, 125, 0.35);
+  }
+  50% {
+    transform: scale(1.02);
+    box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.65), inset 0 -2px 3px rgba(140, 20, 60, 0.18), 0 18px 44px -2px rgba(238, 70, 125, 0.58), 0 0 0 10px rgba(238, 70, 125, 0);
+  }
 }
 
 .btn-clube-vip::after {
   content: '';
   position: absolute;
   top: 0;
-  left: -100%;
+  left: -120%;
   width: 60%;
   height: 100%;
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-  transform: skewX(-20deg);
-  transition: left 0.75s ease;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.45), transparent);
+  transform: skewX(-22deg);
+  animation: btn-auto-shimmer 3.5s infinite ease-in-out;
+}
+
+@keyframes btn-auto-shimmer {
+  0%, 60% { left: -120%; }
+  100% { left: 160%; }
 }
 
 .btn-clube-vip:hover {
-  transform: translateY(-2px);
-  background: linear-gradient(135deg, var(--color-cta-light) 0%, var(--color-cta-primary) 100%);
-  box-shadow: var(--shadow-cta-hover);
-}
-
-.btn-clube-vip:hover::after {
-  left: 140%;
+  transform: translateY(-2px) scale(1.025);
+  background: linear-gradient(135deg, #FF78A7 0%, #F25287 48%, #DC3870 100%);
+  box-shadow: inset 0 1.5px 2px rgba(255, 255, 255, 0.65), inset 0 -2px 3px rgba(140, 20, 60, 0.18), 0 18px 44px -2px rgba(238, 70, 125, 0.6), 0 0 0 4px rgba(238, 70, 125, 0.2);
 }
 
 .btn-clube-vip:active {
-  transform: translateY(0);
-  box-shadow: var(--shadow-cta);
+  transform: translateY(0) scale(0.99);
 }
 
-.btn-clube-arrow {
-  transition: transform var(--trans-fast);
+.btn-vip-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  filter: drop-shadow(0 1px 2px rgba(0,0,0,0.18));
+  flex-shrink: 0;
 }
 
-.btn-clube-vip:hover .btn-clube-arrow {
-  transform: translateX(3px);
+.btn-clube-label {
+  font-size: 0.98rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-shadow: 0 1px 2px rgba(120, 15, 50, 0.25);
+  text-align: center;
+  flex-grow: 1;
+}
+
+.btn-arrow-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.28);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  transition: all var(--trans-fast);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+}
+
+.btn-clube-vip:hover .btn-arrow-circle {
+  background: #FFFFFF;
+  color: #D43068;
+  transform: translateX(3px) scale(1.08);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
 }
 
 /* Texto de Fechamento */
@@ -748,8 +790,28 @@ body {
   }
 
   .btn-clube-vip {
-    font-size: 0.9rem;
-    padding: 16px 20px;
+    padding: 14px 14px 14px 16px;
+    gap: 8px;
+  }
+
+  .btn-clube-label {
+    font-size: 0.86rem;
+    letter-spacing: 0.025em;
+  }
+
+  .btn-vip-icon svg {
+    width: 19px;
+    height: 19px;
+  }
+
+  .btn-arrow-circle {
+    width: 28px;
+    height: 28px;
+  }
+
+  .btn-arrow-circle svg {
+    width: 14px;
+    height: 14px;
   }
 
   .free-highlight-card {
